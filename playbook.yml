@@ -16,6 +16,12 @@
     yum:
       name: "git"
       state: "present"
+      
+  - name: Add pip folder to path
+    shell:
+      mkdir: /home/ec2-user/app
+      chdir: app
+      cmd: export PATH=$PATH:/home/ec2-user/app
 
 # Install the app, note: don't do these tasks with become sudo
 - hosts: webservers
