@@ -38,8 +38,6 @@
   - name: install venv
     pip:
       name: "virtualenv"
-      executable: pip-3.3
-      version: "15.0.3"
       state: "present"   
   - name: install modules in a virtualenv
     pip:
