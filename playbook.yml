@@ -20,6 +20,10 @@
       repo: 'https://github.com/DylanJerault/projet_poei_grp3.git'
       dest: /home/ec2-user/app
       update: yes  # Does a git pull if the repo already exists
+  - name: install venv
+    pip:
+      name: "virtualenv"
+      state: "present"      
   - name: install modules in a virtualenv
     pip:
       requirements: /home/ec2-user/app/requirements.txt
