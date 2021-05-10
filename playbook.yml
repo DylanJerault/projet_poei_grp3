@@ -21,12 +21,12 @@
       dest: /home/ec2-user/app
       update: yes  # Does a git pull if the repo already exists
   - name: install venv
-    pip:
+    pip3:
       name: "virtualenv"
       version: "15.0.3"
       state: "present"   
   - name: install modules in a virtualenv
-    pip:
+    pip3:
       requirements: /home/ec2-user/app/requirements.txt
       virtualenv: /home/ec2-user/app/env
       virtualenv_python: python3.7
