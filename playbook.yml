@@ -1,7 +1,7 @@
  Ansible playbook for deploying a Flask app
 
 # Install system apt packages
-- hosts: 54.183.180.72
+- hosts: webservers
   become: yes
   become_method: sudo
   tasks:
@@ -14,7 +14,7 @@
       - python3-dev
 
 # Install the app, note: don't do these tasks with become sudo
-- hosts: 54.183.180.72
+- hosts: webservers
   tasks:
   - name: clone repo
     git:
@@ -28,7 +28,7 @@
       virtualenv_python: python3.7
 
 # Run a quick test to verify the site is working
-- hosts: 54.183.180.72
+- hosts: webservers
   tasks:
   - name: get url
     get_url:
