@@ -1,6 +1,5 @@
  Ansible playbook for deploying a Flask app
 
----
 # Install system apt packages
 - hosts: webservers
   become: yes
