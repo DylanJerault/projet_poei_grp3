@@ -1,0 +1,37 @@
+ Ansible playbook for deploying a Flask app
+
+---
+# Install system apt packages
+- hosts: webservers
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: install packages
+    apt: name={{item}} state=installed
+    with_items:
+      - python-pip   # Optional
+      - python-dev   # Optional
+      - python3-pip
+      - python3-dev
+
+# Install the app, note: don't do these tasks with become sudo
+- hosts: webservers
+  tasks:
+  - name: clone repo
+    git:
+      repo: 'https://github.com/DylanJerault/projet_poei_grp3.git'
+      dest: /home/ec2-user/app
+      update: yes  # Does a git pull if the repo already exists
+  - name: install modules in a virtualenv
+    pip:
+      requirements: /home/ec2-user/app/requirements.txt
+      virtualenv: /home/ec2-user/app/env
+      virtualenv_python: python3.7
+
+# Run a quick test to verify the site is working
+- hosts: webservers
+  tasks:
+  - name: get url
+    get_url:
+      url: http://54.183.180.72:5000
+      dest: /
