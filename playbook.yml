@@ -16,10 +16,14 @@
     yum:
       name: "git"
       state: "present"
+
+  - name: Creates directory
+    file:
+      path: /home/ec2-user/app
+      state: directory
       
   - name: Add pip folder to path
     shell:
-      mkdir: /home/ec2-user/app
       chdir: app
       cmd: export PATH=$PATH:/home/ec2-user/app
 
