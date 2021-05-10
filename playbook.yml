@@ -42,7 +42,6 @@
   - name: install modules in a virtualenv
     pip:
       requirements: /home/ec2-user/app/requirements.txt
-      executable: pip-3.3
       virtualenv: /home/ec2-user/app/env
       virtualenv_python: python3.7
 
