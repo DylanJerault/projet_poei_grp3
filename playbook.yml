@@ -6,7 +6,7 @@
   tasks:
   - name: install packages
     yum:
-      name: "pip"
+      name: "python3-pip"
       state: "present"
 
 # Install the app, note: don't do these tasks with become sudo
