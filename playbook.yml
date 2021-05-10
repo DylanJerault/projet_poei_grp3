@@ -23,7 +23,8 @@
   - name: install venv
     pip:
       name: "virtualenv"
-      state: "present"      
+      version: "15.0.3"
+      state: "present"   
   - name: install modules in a virtualenv
     pip:
       requirements: /home/ec2-user/app/requirements.txt
