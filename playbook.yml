@@ -5,12 +5,9 @@
   become_method: sudo
   tasks:
   - name: install packages
-    yum: name={{item}} state=installed
-    with_items:
-      - python-pip   # Optional
-      - python-dev   # Optional
-      - python3-pip
-      - python3-dev
+    yum:
+      name: "pip"
+      state: "present"
 
 # Install the app, note: don't do these tasks with become sudo
 - hosts: webservers
