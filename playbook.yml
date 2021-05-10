@@ -4,10 +4,15 @@
   become: yes
   become_method: sudo
   tasks:
+  - name: DL get-pip files
+       shell:
+         cmd: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+         
+  - name: execute pip's installation
+       shell:
+         cmd: python3 get-pip.py
+         
   - name: install packages
-    yum:
-      name: "python3-pip"
-      state: "present"
     yum:
       name: "git"
       state: "present"
