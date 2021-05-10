@@ -11,9 +11,6 @@
     yum:
       name: "git"
       state: "present"
-    pip:
-      name: "virtualenv"
-      state: "present"
 
 # Install the app, note: don't do these tasks with become sudo
 - hosts: webservers
