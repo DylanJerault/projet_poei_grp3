@@ -11,6 +11,9 @@
     yum:
       name: "git"
       state: "present"
+    pip:
+      name: "virtualenv"
+      state: "present"
 
 # Install the app, note: don't do these tasks with become sudo
 - hosts: webservers
@@ -22,8 +25,6 @@
       update: yes  # Does a git pull if the repo already exists
   - name: install modules in a virtualenv
     pip:
-      name: "virtualenv"
-      state: "present"
       requirements: /home/ec2-user/app/requirements.txt
       virtualenv: /home/ec2-user/app/env
       virtualenv_python: python3.7
