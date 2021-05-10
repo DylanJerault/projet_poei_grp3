@@ -8,6 +8,9 @@
     yum:
       name: "python3-pip"
       state: "present"
+    yum:
+      name: "git"
+      state: "present"
 
 # Install the app, note: don't do these tasks with become sudo
 - hosts: webservers
