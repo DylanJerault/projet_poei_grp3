@@ -37,7 +37,7 @@
       update: yes  # Does a git pull if the repo already exists
   - name: install venv
     ansible.builtin.shell:
-      cmd: pip install virtualenv
+      cmd: pip3 install virtualenv
     
   - name: install modules in a virtualenv
     pip:
