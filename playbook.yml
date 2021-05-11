@@ -44,8 +44,8 @@
       cmd: python3 -m venv venv
       
   - name: lancement venv
-    ansible.builtin.shell:    
-      cmd: virtualenv env --distribute      
+    ansible.builtin.shell:
+      cmd: source venv/bin/activate     
       
 
 # Run a quick test to verify the site is working
