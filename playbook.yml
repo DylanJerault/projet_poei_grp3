@@ -49,5 +49,5 @@
   tasks:
   - name: get url
     get_url:
-      url: http://54.183.180.72:5000
+      url: http://3.101.33.193:5000
       dest: /
