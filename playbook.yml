@@ -17,11 +17,7 @@
     file:
       path: /home/ec2-user/app
       state: directory
-      
-  - name: Add pip folder to path
-    shell:
-      cmd: mkdir /home/ec2-user/app
-      
+
   - name: Add pip folder to path
     shell:
       chdir: app
