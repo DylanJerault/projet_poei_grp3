@@ -3,14 +3,10 @@
 - hosts: webservers
   become: yes
   become_method: sudo
-  tasks:
-  - name: DL get-pip files
-    shell:
-      cmd: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-         
+  tasks:        
   - name: execute pip's installation
     shell:
-      cmd: python3 get-pip.py
+      cmd: yum install python3-pip
          
   - name: install packages
     yum:
