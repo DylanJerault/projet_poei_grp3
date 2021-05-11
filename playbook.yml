@@ -49,5 +49,6 @@
       
   - name: lancement app
     ansible.builtin.shell:
+      chdir: app
       cmd: python3 app.py 
       
