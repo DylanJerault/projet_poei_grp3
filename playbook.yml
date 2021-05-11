@@ -45,7 +45,7 @@
       
   - name: lancement venv
     ansible.builtin.shell:    
-      cmd: venv\Scripts\activate        
+      cmd: virtualenv env --distribute      
       
 
 # Run a quick test to verify the site is working
