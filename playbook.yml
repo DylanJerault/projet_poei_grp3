@@ -37,8 +37,7 @@
       update: yes  # Does a git pull if the repo already exists
   - name: install venv
     pip:
-      name: "virtualenv"
-      executable: pip3
+      name: virtualenv
   - name: install modules in a virtualenv
     pip:
       requirements: /home/ec2-user/app/requirements.txt
