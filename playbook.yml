@@ -45,7 +45,13 @@
       
 #  - name: lancement venv
 #    ansible.builtin.shell:
-#      cmd: source venv/bin/activate    
+#      cmd: source venv/bin/activate 
+   
+  - name: test
+    ansible.builtin.shell:
+      chdir: app
+      cmd: pytest app.py
+      
       
   - name: lancement app
     ansible.builtin.shell:
