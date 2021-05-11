@@ -45,13 +45,9 @@
       
   - name: lancement venv
     ansible.builtin.shell:
-      cmd: source venv/bin/activate     
+      cmd: source venv/bin/activate    
       
-
-# Run a quick test to verify the site is working
-- hosts: webservers
-  tasks:
-  - name: get url
-    get_url:
-      url: http://3.101.33.193:5000
-      dest: /
+  - name: lancement app
+    ansible.builtin.shell:
+      cmd: python3 app.py 
+      
