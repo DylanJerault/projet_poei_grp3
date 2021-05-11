@@ -37,7 +37,7 @@
     
   - name: install flask pytest
     ansible.builtin.shell:
-      cmd: pip3 install flask
+      cmd: pip3 install flask -U pytest
       
 #  - name: install modules in a virtualenv
 #    ansible.builtin.shell:
