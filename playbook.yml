@@ -35,11 +35,18 @@
     ansible.builtin.shell:
       cmd: pip3 install virtualenv
     
+  - name: install flask pytest
+    ansible.builtin.shell:
+      cmd: pip3 install flask pytest
+      
   - name: install modules in a virtualenv
-    pip:
-      requirements: /home/ec2-user/app/requirements.txt
-      virtualenv: /home/ec2-user/app/env
-      virtualenv_python: python3.7
+    ansible.builtin.shell:
+      cmd: python3 -m venv venv
+      
+  - name: lancement venv
+    ansible.builtin.shell:    
+      cmd: venv\Scripts\activate        
+      
 
 # Run a quick test to verify the site is working
 - hosts: webservers
